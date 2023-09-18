@@ -1,0 +1,33 @@
+### Variables 
+@apiurl = http://localhost:8000
+
+### Criar usuário
+POST {{apiurl}}/usuario/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome": "Jurandir",
+    "usuario": "jurandir",
+    "senha": "123456"
+}
+
+
+### Autenticar usuário
+# @name autenticar
+POST {{apiurl}}/usuario/autenticar HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuario": "jurandir",
+    "senha": "123456"
+}
+
+
+### Endpoint nao seguro
+GET {{apiurl}}/agenda/naoAutenticado HTTP/1.1
+
+
+### Endpoint seguro
+@token = {{autenticar.response.body.token}}
+GET {{apiurl}}/agenda/autenticado HTTP/1.1
+token: {{token}}
