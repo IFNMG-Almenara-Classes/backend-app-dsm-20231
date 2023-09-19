@@ -30,4 +30,4 @@ GET {{apiurl}}/agenda/naoAutenticado HTTP/1.1
 ### Endpoint seguro
 @token = {{autenticar.response.body.token}}
 GET {{apiurl}}/agenda/autenticado HTTP/1.1
-token: {{token}}
+token: eyJh1bGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOjEsImlhdCI6MTY5NTA3ODk1OSwiZXhwIjoxNjk1NjgzNzU5fQ.oL-Pzu-JBetl7hhOqVISsZEx0omlWvGxS6i6VIEfJzs

@@ -9,6 +9,7 @@ const esconderSenha = (usuario) => {
 }
 
 const criarUsuario = async (req, res) => {
+    console.log(req.body);
     try {
         if (await Usuario.findOne({ where: { usuario: req.body.usuario }})) {
             throw "Usuario '" + req.body.usuario + "' já existe no sitema";
